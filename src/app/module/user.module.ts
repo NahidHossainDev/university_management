@@ -10,8 +10,8 @@ const userSchema = new Schema<IUser>(
       unique: true,
       required: true,
     },
-    password: { type: String, required: true },
     role: { type: String, required: true },
+    password: { type: String, required: true },
   },
   { timestamps: true }
 )
