@@ -17,8 +17,6 @@ const createNewUser = async (data: IUser) => {
   return user
 }
 
-const userService = {
+export const UserService = {
   createNewUser,
 }
-
-export default userService
