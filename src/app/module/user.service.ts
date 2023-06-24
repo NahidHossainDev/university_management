@@ -17,6 +17,15 @@ const createNewUser = async (data: IUser) => {
   return user
 }
 
+const getAllUser = async () => {
+  const user = await User.find({})
+  if (!user) {
+    throw new Error('Failed to find all user!')
+  }
+  return user
+}
+
 export const UserService = {
   createNewUser,
+  getAllUser,
 }

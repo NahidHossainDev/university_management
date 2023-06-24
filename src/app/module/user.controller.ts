@@ -15,6 +15,20 @@ const createUser: RequestHandler = async (req, res, next) => {
   }
 }
 
+const getAllUser: RequestHandler = async (req, res, next) => {
+  try {
+    const result = await UserService.getAllUser()
+    res.status(200).json({
+      success: true,
+      data: result,
+      message: '',
+    })
+  } catch (err) {
+    next(err)
+  }
+}
+
 export const UserController = {
   createUser,
+  getAllUser,
 }

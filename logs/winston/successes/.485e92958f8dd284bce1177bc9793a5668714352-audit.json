@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\successes\\.485e92958f8dd284bce1177bc9793a5668714352-audit.json",
+    "files": [
+        {
+            "date": 1687603373711,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\successes\\24-06-2023-16.log",
+            "hash": "5ffbe04d7b1b584498829d51b813929b6ed99c48907fecc358714d1bb953fd96"
+        },
+        {
+            "date": 1687604458698,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\successes\\24-06-2023-17.log",
+            "hash": "35997b609e6f59d9cb69288cad10cfdd14773158bbb67082fb375cd796a728ff"
+        },
+        {
+            "date": 1687609660489,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\successes\\24-06-2023-18.log",
+            "hash": "dd7a8ccf52e5acc693e515c0a60363fd894f600b676dbed3fa1dcc2dac95a724"
+        },
+        {
+            "date": 1687611784440,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\successes\\24-06-2023-19.log",
+            "hash": "c58bbd74b8bdc8a60a06c159dc6e71d8b795ab6b7c067fef8119de85e88af0cc"
+        },
+        {
+            "date": 1687615387354,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\successes\\24-06-2023-20.log",
+            "hash": "8503ec4c6488cffb0644532b0aac66cf5d49cb3687e676db34b0616e0ac9d18c"
+        }
+    ],
+    "hashType": "sha256"
+}

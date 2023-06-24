@@ -13,7 +13,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/v1/users', UserRouter)
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('work done')
+  // console.log(x)
+  // Promise.reject(new Error('Unhandle promise rejection!'))
+  res.status(500).send('Internal Server error!')
 })
 
 app.use(globalErrorHandler)
