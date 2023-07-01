@@ -1,17 +1,18 @@
 type ErrorMsg = {
-  path: string
-  message: string
-}
+  path: string | number;
+  message: string;
+};
 
 export type IGenericErrorMsg = {
-  success: boolean
-  message: string
-  errorMsg: ErrorMsg[]
-  stack?: string | undefined
-}
+  success: boolean;
+  message: string;
+  errorMsg: ErrorMsg[];
+  stack?: string | undefined;
+};
 
 export type IGenericError = {
-  statusCode: number
-  message: string
-  stack?: string
-}
+  statusCode: number;
+  message: string;
+  errorMsg: ErrorMsg[];
+  stack?: string;
+};
