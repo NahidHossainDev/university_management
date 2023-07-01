@@ -1,5 +1,5 @@
-import { Error } from 'mongoose'
-import { IGenericErrorMsg } from '../interfaces/error'
+import { Error } from 'mongoose';
+import { IGenericErrorMsg } from '../interfaces/error';
 
 export const handleMongooseValidationErr = (
   err: Error.ValidationError
@@ -8,7 +8,7 @@ export const handleMongooseValidationErr = (
     return Object.values(err?.errors).map(el => ({
       path: el?.path,
       message: el?.message,
-    }))
+    }));
   }
-  return []
-}
+  return [];
+};
