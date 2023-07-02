@@ -2,7 +2,7 @@
 import { ErrorRequestHandler } from 'express';
 import { ZodError } from 'zod';
 import config from '../../config';
-import AppError from '../../error/AppError';
+import ApiError from '../../error/ApiError';
 import { handleMongooseValidationErr } from '../../error/handleMongoosValidationError';
 import { handleZodError } from '../../error/handleZodError';
 import { IGenericErrorMsg } from '../../interfaces/error';
@@ -32,7 +32,7 @@ export const globalErrorHandler: ErrorRequestHandler = (
     const { errorMsg, message, statusCode: code } = handleZodError(error);
     result.errorMsg = errorMsg;
     (result.message = message), (statusCode = code);
-  } else if (error instanceof AppError) {
+  } else if (error instanceof ApiError) {
     result.message = error?.message;
     result.errorMsg = error?.message
       ? [{ path: '', message: error?.message }]
