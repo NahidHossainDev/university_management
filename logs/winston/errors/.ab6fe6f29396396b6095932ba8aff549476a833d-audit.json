@@ -49,6 +49,56 @@
             "date": 1688148892065,
             "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\01-07-2023-00.log",
             "hash": "58e36c9bca892248dbe72d14788d859af9ceacbad6ed9afd456ea07eb8a1d8f6"
+        },
+        {
+            "date": 1688203500245,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\01-07-2023-15.log",
+            "hash": "a5b6a0a4982c8191b7ea01fc2acad324548099fb3d309e8e91cf0ea43e6b906f"
+        },
+        {
+            "date": 1688210031615,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\01-07-2023-17.log",
+            "hash": "4f932f9e41d474693ab9b8b6f6495b4150d6e7ddd98f1365bc0c3e37472102cf"
+        },
+        {
+            "date": 1688215355111,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\01-07-2023-18.log",
+            "hash": "ee0f2595308e72a6c290796b139c90216e13f5936a5263b1383ef4a06579df94"
+        },
+        {
+            "date": 1688219132648,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\01-07-2023-19.log",
+            "hash": "7cf851b8a949f3d733e30c459682471a712cb6477d28bd2f185016493d7b3e39"
+        },
+        {
+            "date": 1688220665695,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\01-07-2023-20.log",
+            "hash": "9d7a1fa2153a9799a55630e830942778623789ddc0be43a6785423118f7bdf1c"
+        },
+        {
+            "date": 1688230740656,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\01-07-2023-22.log",
+            "hash": "c60fc306a3d95c987ba34d49525d2724aefdbca0d9d9db032243442b4225236c"
+        },
+        {
+            "date": 1688270011471,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\02-07-2023-09.log",
+            "hash": "65eefd738026c35db2741ee61bf2892644261c62d9dd9c62202aaff5fea7aef6"
+        },
+        {
+            "date": 1688271144249,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\02-07-2023-10.log",
+            "hash": "e93353e40f5ca1ade7c12fc192060492fbee9bfd88210d27fbff71fd9248b0f6"
+        },
+        {
+            "date": 1688275040059,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\02-07-2023-11.log",
+            "hash": "c7e0d204544c5ed7b3326e976ee507bbc41c2dcdbd85aaef177b3f1bf25a6ee9"
+        },
+        {
+            "date": 1688278963914,
+            "name": "D:\\WebDev\\Programming_Hero_Next_Level\\Practice\\university_management\\logs\\winston\\errors\\02-07-2023-12.log",
+            "hash": "cbb9855202831e1f72996c2c32986425d21037fa8bcdab914f5f8dfc198e2ba8"
         }
     ],
     "hashType": "sha256"
