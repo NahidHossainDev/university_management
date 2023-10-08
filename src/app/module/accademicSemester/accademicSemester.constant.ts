@@ -20,7 +20,7 @@ export const months: string[] = [
 ];
 
 export const semesterTypeCodeMaper: Record<SemesterType, CodeType> = {
-  AUTUMN: '01',
-  SUMMER: '02',
+  SUMMER: '01',
+  AUTUMN: '02',
   FALL: '03',
 };
