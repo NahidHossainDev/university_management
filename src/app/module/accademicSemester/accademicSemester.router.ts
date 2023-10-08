@@ -17,6 +17,8 @@ router.post(
 
 router.get('/:id', AccademicSemesterController.getSemesterByID);
 
+router.delete('/:id', AccademicSemesterController.deleteSemester);
+
 router.put(
   '/update/:id',
   validateRequest(updateAccademicSemesterZodScehma),
