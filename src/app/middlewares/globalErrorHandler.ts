@@ -42,6 +42,5 @@ export const globalErrorHandler: ErrorRequestHandler = (error, req, res) => {
   if (config.env === 'production') {
     delete result.stack;
   }
-
   res.status(statusCode).json(result);
 };
