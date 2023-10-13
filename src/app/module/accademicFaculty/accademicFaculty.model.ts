@@ -13,7 +13,12 @@ const accademicFacultySchema = new Schema<IAccademicFaculty>(
       required: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
 
 accademicFacultySchema.pre('save', async function (next) {

@@ -34,7 +34,12 @@ const accademicSemesterSchema = new Schema<IAccademicSemester>(
       enum: months,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
 
 accademicSemesterSchema.pre('save', async function (next) {
