@@ -1,0 +1,6 @@
+export const enum ENUM_USER_ROLE {
+  SUPER_ADMIN = 'SUPER_ADMIN',
+  ADMIN = 'ADMIN',
+  FACULTY = 'FACULTY',
+  STUDENT = 'STUDENT',
+}

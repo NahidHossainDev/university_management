@@ -16,15 +16,15 @@ export type Months =
   | 'November'
   | 'December';
 
-export type IAccademicSemester = {
+export type IAcademicSemester = {
   title: SemesterType;
-  year: number;
+  year: string;
   code: CodeType;
   startMonth: Months;
   endMonth: Months;
 };
 
-export type AccademicSemesterModel = Model<IAccademicSemester>;
+export type AccademicSemesterModel = Model<IAcademicSemester>;
 
 export type IAccademicSemeserFilter = {
   searchTearm?: string;

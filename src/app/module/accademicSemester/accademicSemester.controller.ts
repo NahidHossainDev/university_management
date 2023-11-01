@@ -5,14 +5,14 @@ import { IPaginatedResponse } from '../../../interfaces/pagination';
 import { catchAsync } from '../../../shared/catchAsync';
 import { pick } from '../../../shared/pick';
 import { sendFormatedResponse } from '../../../shared/sendFormatedResponse';
-import { IAccademicSemester } from './accademicSemester.interface';
+import { IAcademicSemester } from './accademicSemester.interface';
 import { AccademicSemesterService } from './accedemicSemester.service';
 
 const createSemester: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const paylaod = req.body;
     const result = await AccademicSemesterService.createSemester(paylaod);
-    sendFormatedResponse<IAccademicSemester>(res, {
+    sendFormatedResponse<IAcademicSemester>(res, {
       statusCode: StatusCodes.OK,
       result,
       message: 'Academic Semester created successfully!',
@@ -27,7 +27,7 @@ const getAllSemesters = catchAsync(async (req: Request, res: Response) => {
     paginateQueries,
     filters
   );
-  sendFormatedResponse<IPaginatedResponse<IAccademicSemester[]>>(res, {
+  sendFormatedResponse<IPaginatedResponse<IAcademicSemester[]>>(res, {
     statusCode: StatusCodes.OK,
     result,
     message: '',
@@ -38,7 +38,7 @@ const getSemesterByID = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
   const result = await AccademicSemesterService.getSemesterByID(id);
 
-  sendFormatedResponse<IAccademicSemester | null>(res, {
+  sendFormatedResponse<IAcademicSemester | null>(res, {
     statusCode: StatusCodes.OK,
     result,
     message: '',
@@ -50,7 +50,7 @@ const updateSemester = catchAsync(async (req: Request, res: Response) => {
   const payload = req.body;
   const result = await AccademicSemesterService.updateSemester(id, payload);
 
-  sendFormatedResponse<IAccademicSemester | null>(res, {
+  sendFormatedResponse<IAcademicSemester | null>(res, {
     statusCode: StatusCodes.OK,
     result,
     message: '',
@@ -61,7 +61,7 @@ const deleteSemester = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
   const result = await AccademicSemesterService.deleteSemester(id);
 
-  sendFormatedResponse<IAccademicSemester | null>(res, {
+  sendFormatedResponse<IAcademicSemester | null>(res, {
     statusCode: StatusCodes.OK,
     result,
     message: '',

@@ -4,10 +4,10 @@ import ApiError from '../../../error/ApiError';
 import { codeType, months, semesterType } from './accademicSemester.constant';
 import {
   AccademicSemesterModel,
-  IAccademicSemester,
+  IAcademicSemester,
 } from './accademicSemester.interface';
 
-const accademicSemesterSchema = new Schema<IAccademicSemester>(
+const accademicSemesterSchema = new Schema<IAcademicSemester>(
   {
     title: {
       type: String,
@@ -20,7 +20,7 @@ const accademicSemesterSchema = new Schema<IAccademicSemester>(
       enum: codeType,
     },
     year: {
-      type: Number,
+      type: String,
       required: true,
     },
     startMonth: {
@@ -54,6 +54,6 @@ accademicSemesterSchema.pre('save', async function (next) {
 });
 
 export const AccademicSemester = model<
-  IAccademicSemester,
+  IAcademicSemester,
   AccademicSemesterModel
 >('AccademicSemester', accademicSemesterSchema);

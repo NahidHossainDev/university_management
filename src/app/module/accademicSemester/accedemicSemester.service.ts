@@ -7,14 +7,14 @@ import {
 } from '../../../interfaces/pagination';
 import { semesterTypeCodeMaper } from './accademicSemester.constant';
 import {
+  IAcademicSemester,
   IAccademicSemeserFilter,
-  IAccademicSemester,
 } from './accademicSemester.interface';
 import { AccademicSemester } from './accademicSemester.model';
 
 const createSemester = async (
-  payload: IAccademicSemester
-): Promise<IAccademicSemester> => {
+  payload: IAcademicSemester
+): Promise<IAcademicSemester> => {
   // check is code valid
   if (semesterTypeCodeMaper[payload.title] !== payload.code)
     throw new ApiError(StatusCodes.BAD_REQUEST, 'Invalid semiester code!');
@@ -29,7 +29,7 @@ const createSemester = async (
 const getAllSemesters = async (
   paginateQueries: IPaginationOptions,
   filters: IAccademicSemeserFilter
-): Promise<IPaginatedResponse<IAccademicSemester[]>> => {
+): Promise<IPaginatedResponse<IAcademicSemester[]>> => {
   const { limit, page, skip, sortBy, sortOrder } =
     claculatePagination(paginateQueries);
   const { searchTearm, ...remainingFilters } = filters;
@@ -71,14 +71,14 @@ const getAllSemesters = async (
 
 const getSemesterByID = async (
   id: string
-): Promise<IAccademicSemester | null> => {
+): Promise<IAcademicSemester | null> => {
   const result = await AccademicSemester.findById(id);
   return result;
 };
 
 const updateSemester = async (
   id: string,
-  payload: Partial<IAccademicSemester>
+  payload: Partial<IAcademicSemester>
 ) => {
   // check is code valid
   if (payload.title && semesterTypeCodeMaper[payload?.title] !== payload?.code)
@@ -94,7 +94,7 @@ const updateSemester = async (
 
 const deleteSemester = async (
   id: string
-): Promise<IAccademicSemester | null> => {
+): Promise<IAcademicSemester | null> => {
   const result = await AccademicSemester.findOneAndDelete({ _id: id });
   return result;
 };
