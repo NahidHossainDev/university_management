@@ -2,7 +2,6 @@ import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { globalErrorHandler } from './app/middlewares/globalErrorHandler';
-import { generateStudentId } from './app/module/user/user.utils';
 import appRouter from './app/routes';
 
 const app: Application = express();
@@ -35,9 +34,9 @@ app.use((res: Response, req: Request) => {
   });
 });
 
-async function something() {
-  const id = await generateStudentId({ code: '01', year: '2025' });
-  console.log({ id });
-}
-something();
+// async function something() {
+//   const id = await generateFacultyID();
+//   console.log({ id });
+// }
+// something();
 export default app;
