@@ -21,7 +21,7 @@ app.use(globalErrorHandler);
 
 // handle not found
 
-app.use((res: Response, req: Request) => {
+app.use((req: Request, res: Response) => {
   res.status(StatusCodes.NOT_FOUND).json({
     success: false,
     message: 'Not Found!',

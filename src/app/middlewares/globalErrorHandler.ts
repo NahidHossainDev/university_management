@@ -8,7 +8,12 @@ import { handleZodError } from '../../error/handleZodError';
 import { IGenericErrorMsg } from '../../interfaces/error';
 import { errorLogger } from '../../shared/logger';
 
-export const globalErrorHandler: ErrorRequestHandler = (error, req, res) => {
+export const globalErrorHandler: ErrorRequestHandler = (
+  error,
+  req,
+  res,
+  next
+) => {
   config.env === 'development'
     ? console.log('Global error handler', error)
     : errorLogger.error('Global error handler', error);
