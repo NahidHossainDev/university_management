@@ -4,10 +4,10 @@ import { catchAsync } from '../../../shared/catchAsync';
 import { sendFormatedResponse } from '../../../shared/sendFormatedResponse';
 import { UserService } from './user.service';
 
-const createUser: RequestHandler = catchAsync(
+const createStudent: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const userData = req.body;
-    const result = await UserService.createNewUser(userData);
+    const { student, ...userData } = req.body;
+    const result = await UserService.createNewStudent(student, userData);
     sendFormatedResponse(res, {
       statusCode: StatusCodes.OK,
       result,
@@ -26,7 +26,19 @@ const getAllUser: RequestHandler = catchAsync(
   }
 );
 
+const getUserByID: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const result = await UserService.getUserByID(id);
+    sendFormatedResponse(res, {
+      statusCode: StatusCodes.OK,
+      result,
+    });
+  }
+);
+
 export const UserController = {
-  createUser,
+  createStudent,
   getAllUser,
+  getUserByID,
 };

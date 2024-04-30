@@ -56,4 +56,4 @@ accademicSemesterSchema.pre('save', async function (next) {
 export const AccademicSemester = model<
   IAcademicSemester,
   AccademicSemesterModel
->('AccademicSemester', accademicSemesterSchema);
+>('Accademic_Semester', accademicSemesterSchema);

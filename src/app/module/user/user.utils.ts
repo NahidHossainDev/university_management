@@ -14,11 +14,11 @@ export const generateUserId = async () => {
 };
 
 export const generateStudentId = async (
-  academicSemester: IAcademicSemester
+  academicSemester: IAcademicSemester | null
 ): Promise<string> => {
   const currentId = (await getLastUserId()) || String(0);
   let incrementedID = String(Number(currentId) + 1).padStart(5, '0');
-  incrementedID = academicSemester.year.substring(2) + incrementedID;
+  incrementedID = academicSemester?.year?.substring(2) + incrementedID;
   return incrementedID;
 };
 

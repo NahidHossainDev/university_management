@@ -5,11 +5,13 @@ import { createUserZodSchema } from './user.validation';
 
 const router = express.Router();
 router.post(
-  '/create-user',
+  '/create-student',
   validateRequest(createUserZodSchema),
-  UserController.createUser
+  UserController.createStudent
 );
 
-router.get('/get-users', UserController.getAllUser);
+router.get('/get-student', UserController.getAllUser);
+
+router.get('/:id', UserController.getUserByID);
 
 export { router as UserRouter };
