@@ -11,8 +11,8 @@ import { errorLogger } from '../../shared/logger';
 export const globalErrorHandler: ErrorRequestHandler = (
   error,
   req,
-  res,
-  next
+  res
+  // next
 ) => {
   config.env === 'development'
     ? console.log('Global error handler', error)
