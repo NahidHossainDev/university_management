@@ -1,4 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
+import { SortOrder } from 'mongoose';
 import ApiError from '../../../error/ApiError';
 import { claculatePagination } from '../../../helper/paginationHelper';
 import {
@@ -52,10 +53,41 @@ const getAllSemesters = async (
     });
   }
 
+  // const andConditions = [
+  //   {
+  //     $or: [
+  //       {
+  //         title: {
+  //           $regex: searchTerm,
+  //           $options: 'i',
+  //         },
+  //       },
+  //       {
+  //         code: {
+  //           $regex: searchTerm,
+  //           $options: 'i',
+  //         },
+  //       },
+  //       {
+  //         year: {
+  //           $regex: searchTerm,
+  //           $options: 'i',
+  //         },
+  //       },
+  //     ],
+  //   },
+  // ];
+
+  const sortConditions: { [key: string]: SortOrder } = {};
+
+  if (sortBy && sortOrder) {
+    sortConditions[sortBy] = sortOrder;
+  }
+
   const condition = andConditions.length > 0 ? { $and: andConditions } : {};
 
   const result = await AccademicSemester.find(condition)
-    .sort({ [sortBy]: sortOrder })
+    .sort(sortConditions)
     .skip(skip)
     .limit(limit);
 
