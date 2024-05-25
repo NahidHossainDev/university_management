@@ -1,6 +1,6 @@
 import { Request, RequestHandler, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { parinateOptions } from '../../../constants/pagination';
+import { paginateOptions } from '../../../constants/pagination';
 import { IPaginatedResponse } from '../../../interfaces/pagination';
 import { catchAsync } from '../../../shared/catchAsync';
 import { pick } from '../../../shared/pick';
@@ -21,7 +21,7 @@ const createDepartment: RequestHandler = catchAsync(
 );
 
 const getAllDepartments = catchAsync(async (req: Request, res: Response) => {
-  const paginateQueries = pick(req?.query, parinateOptions);
+  const paginateQueries = pick(req?.query, paginateOptions);
   const filters = pick(req?.query, ['searchTearm']);
   const result = await AccademicDepartmentService.getAllDepartments(
     paginateQueries,

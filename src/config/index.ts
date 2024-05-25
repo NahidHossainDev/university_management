@@ -7,7 +7,9 @@ const config = {
   env: process.env.NODE_ENV,
   db_url: process.env.MONGODB_URI,
   port: process.env.PORT,
-  defaultStudentPass: process.env.DEFAULT_STUDENT_PASS,
+  default_student_pass: process.env.DEFAULT_STUDENT_PASS,
+  default_faculty_pass: process.env.DEFAULT_FACULTY_PASS,
+  default_admin_pass: process.env.DEFAULT_ADMIN_PASS,
 };
 
 export default config;

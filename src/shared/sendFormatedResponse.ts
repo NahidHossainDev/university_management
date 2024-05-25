@@ -2,7 +2,7 @@ import { Response } from 'express';
 
 export type IApiResponse<T> = {
   statusCode: number;
-  result: T;
+  result: T | null;
   message?: string | null;
 };
 
@@ -13,7 +13,7 @@ export const sendFormatedResponse = <T>(
   const { statusCode, message, result } = data;
   res.status(statusCode).json({
     success: true,
-    data: result,
+    data: result ?? null,
     message: message || null,
   });
 };

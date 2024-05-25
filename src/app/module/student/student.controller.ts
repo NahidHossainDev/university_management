@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { parinateOptions } from '../../../constants/pagination';
+import { paginateOptions } from '../../../constants/pagination';
 import { IPaginatedResponse } from '../../../interfaces/pagination';
 import { catchAsync } from '../../../shared/catchAsync';
 import { pick } from '../../../shared/pick';
@@ -9,7 +9,7 @@ import { IStudent } from './student.interface';
 import { StudentService } from './student.service';
 
 const getAllStudent = catchAsync(async (req: Request, res: Response) => {
-  const paginateQueries = pick(req?.query, parinateOptions);
+  const paginateQueries = pick(req?.query, paginateOptions);
   const filters = pick(req?.query, ['searchTearm']);
   const result = await StudentService.getAllStudents(paginateQueries, filters);
   sendFormatedResponse<IPaginatedResponse<IStudent[]>>(res, {

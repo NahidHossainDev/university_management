@@ -1,1 +1,1 @@
-export const parinateOptions = ['page', 'limit', 'sortBy', 'sortOrder'];
+export const paginateOptions = ['page', 'limit', 'sortBy', 'sortOrder'];
