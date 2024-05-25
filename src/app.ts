@@ -20,7 +20,6 @@ app.get('/', (req: Request, res: Response) => {
 app.use(globalErrorHandler);
 
 // handle not found
-
 app.use((req: Request, res: Response) => {
   res.status(StatusCodes.NOT_FOUND).json({
     success: false,

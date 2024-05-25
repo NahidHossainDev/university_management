@@ -193,7 +193,7 @@ const createAdmin = async (
 const getAllUser = async () => {
   const user = await User.find({});
   if (!user) {
-    throw new Error('Failed to find all user!');
+    throw new Error('No user found!');
   }
   return user;
 };
@@ -209,7 +209,7 @@ const getUserByID = async (id: string) => {
   });
 
   if (!user) {
-    throw new Error('Failed to find all user!');
+    throw new ApiError(StatusCodes.NOT_FOUND, 'User not found!');
   }
   return user;
 };

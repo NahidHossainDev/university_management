@@ -1,4 +1,10 @@
 export type ILogingPayload = {
   id: string;
-  passowrd: string;
+  password: string;
+};
+
+export type IloginUserResponse = {
+  accessToken: string;
+  refreshToken: string;
+  isPasswordChanged: boolean;
 };

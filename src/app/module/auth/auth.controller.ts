@@ -11,7 +11,7 @@ const login: RequestHandler = catchAsync(
     sendFormatedResponse(res, {
       statusCode: StatusCodes.OK,
       result,
-      message: 'User created successfully!',
+      message: 'User logged in successfully!',
     });
   }
 );
