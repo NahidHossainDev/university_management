@@ -2,6 +2,7 @@
 import bcrypt from 'bcrypt';
 import { Schema, model } from 'mongoose';
 import config from '../../../config';
+import { ENUM_USER_ROLE } from '../../../enums/user';
 import { IUser, IUserMethods, IUserModel } from './user.interface';
 
 const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
@@ -11,7 +12,7 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
       unique: true,
       required: true,
     },
-    role: { type: String, required: true },
+    role: { type: String, enum: Object.values(ENUM_USER_ROLE), required: true },
     password: { type: String, required: true, select: 0 },
     isPasswordChanged: { type: Boolean, default: false, select: 0 },
     student: { type: Schema.Types.ObjectId, ref: 'Student' },

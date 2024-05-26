@@ -14,6 +14,8 @@ let server: Server;
 async function bootstrap() {
   try {
     await mongoose.connect(config.db_url as string);
+    mongoose.set('runValidators', true); // will run the model validation function for every create operation
+
     logger.info('mongo server connected!');
     server = app.listen(config.port, () => {
       logger.info(`Server listening on port ${config.port}`);

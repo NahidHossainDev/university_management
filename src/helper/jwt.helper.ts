@@ -16,3 +16,17 @@ export const createJWTRefreshToken = (
     expiresIn: config.jwt.refresh_secret_expirity,
   });
 };
+
+export const verifyJWTRefreshToken = (token: string): jwt.JwtPayload => {
+  return jwt.verify(
+    token,
+    config.jwt.refresh_secret as string
+  ) as jwt.JwtPayload;
+};
+
+export const verifyJWTAccessToken = (token: string): jwt.JwtPayload => {
+  return jwt.verify(
+    token,
+    config.jwt.access_secret_key as string
+  ) as jwt.JwtPayload;
+};

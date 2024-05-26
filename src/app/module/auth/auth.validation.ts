@@ -11,6 +11,15 @@ const logInValidation = z.object({
   }),
 });
 
+const refreshTokenValidation = z.object({
+  cookies: z.object({
+    refreshToken: z.string({
+      required_error: 'ID is required',
+    }),
+  }),
+});
+
 export const AuthValidation = {
   logInValidation,
+  refreshTokenValidation,
 };
