@@ -65,7 +65,7 @@ const changePassword = async (
   user: JwtPayload | null,
   payload: IChangePassPayload
 ) => {
-  const isUserExist = await User.findById(user?.id).select('password');
+  const isUserExist = await User.findOne({ id: user?.id }).select('password');
   if (!isUserExist)
     throw new ApiError(StatusCodes.NOT_FOUND, 'User does not exist!');
 
