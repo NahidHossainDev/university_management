@@ -17,8 +17,6 @@ export const authGuard =
       if (!verifyedUser)
         throw new ApiError(StatusCodes.UNAUTHORIZED, 'Invalid token!');
 
-      console.log(verifyedUser);
-
       if (!roles.includes(verifyedUser?.role))
         throw new ApiError(StatusCodes.FORBIDDEN, 'Forbidden Resource!');
 
