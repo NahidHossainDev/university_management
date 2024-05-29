@@ -15,6 +15,7 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
     role: { type: String, enum: Object.values(ENUM_USER_ROLE), required: true },
     password: { type: String, required: true, select: 0 },
     isPasswordChanged: { type: Boolean, default: false, select: 0 },
+    passwordUpdatedAt: { type: Date },
     student: { type: Schema.Types.ObjectId, ref: 'Student' },
     faculty: { type: Schema.Types.ObjectId, ref: 'Faculty' },
     admin: { type: Schema.Types.ObjectId, ref: 'Admin' },
@@ -33,6 +34,8 @@ userSchema.pre('save', async function (this) {
     user.password,
     Number(config.bcrypt_salt_round)
   );
+
+  if (user.isPasswordChanged) user.passwordUpdatedAt = new Date();
 });
 
 // userSchema.methods.isUserExist = async function (

@@ -8,6 +8,7 @@ export type IUser = {
   student?: Types.ObjectId;
   faculty?: Types.ObjectId;
   admin?: Types.ObjectId;
+  passwordUpdatedAt?: Date;
 };
 
 // FOR USING INSTANSE METHODS

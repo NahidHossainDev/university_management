@@ -1,4 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
+import { JwtPayload } from 'jsonwebtoken';
 import ApiError from '../../../error/ApiError';
 import {
   createJWTAccessToken,
@@ -6,7 +7,11 @@ import {
   verifyJWTRefreshToken,
 } from '../../../helper/jwt.helper';
 import { User } from '../user/user.model';
-import { ILogingPayload, IloginUserResponse } from './auth.interface';
+import {
+  IChangePassPayload,
+  ILogingPayload,
+  IloginUserResponse,
+} from './auth.interface';
 
 const login = async (paylaod: ILogingPayload): Promise<IloginUserResponse> => {
   const { id, password } = paylaod;
@@ -56,7 +61,29 @@ const refreshToken = async (token: string) => {
   };
 };
 
+const changePassword = async (
+  user: JwtPayload | null,
+  payload: IChangePassPayload
+) => {
+  const isUserExist = await User.findById(user?.id).select('password');
+  if (!isUserExist)
+    throw new ApiError(StatusCodes.NOT_FOUND, 'User does not exist!');
+
+  const isPassMatched = await User.isPasswordMatch(
+    payload.oldPassword,
+    isUserExist.password
+  );
+  if (!isPassMatched)
+    throw new ApiError(StatusCodes.NOT_FOUND, 'Old password does not match!');
+
+  isUserExist.password = payload.newPassword;
+  isUserExist.isPasswordChanged = true;
+
+  isUserExist.save();
+};
+
 export const AuthService = {
   login,
   refreshToken,
+  changePassword,
 };
