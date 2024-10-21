@@ -25,3 +25,17 @@ export type AccademicFacultyModel = Model<IAccademicFaculty>;
 export type IAccademicFacultyFilter = {
   searchTearm?: string;
 };
+
+export type AcademicFacultyCreatedEvent = {
+  id: string;
+  title: string;
+};
+
+export type AcademicFacultyUpdatedEvent = {
+  id: string;
+  title: string;
+};
+
+export type AcademicFacultyDeletedEvent = {
+  id: string;
+};

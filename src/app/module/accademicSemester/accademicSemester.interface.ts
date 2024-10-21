@@ -29,3 +29,12 @@ export type AccademicSemesterModel = Model<IAcademicSemester>;
 export type IAccademicSemeserFilter = {
   searchTearm?: string;
 };
+
+export type IAcademicSemesterCreatedEvent = {
+  title: string;
+  year: string;
+  code: string;
+  startMonth: string;
+  endMonth: string;
+  id: string;
+};

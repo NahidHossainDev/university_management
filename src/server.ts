@@ -1,8 +1,10 @@
 import { Server } from 'http';
 import mongoose from 'mongoose';
 import app from './app';
+import { subscribeRedisEvents } from './app/events';
 import config from './config';
 import { errorLogger, logger } from './shared/logger';
+import { RedisClient } from './shared/redis';
 
 process.on('uncaughtException', error => {
   errorLogger.error(error);
@@ -13,6 +15,9 @@ let server: Server;
 
 async function bootstrap() {
   try {
+    await RedisClient.connect().then(() => {
+      subscribeRedisEvents();
+    });
     await mongoose.connect(config.db_url as string);
     mongoose.set('runValidators', true); // will run the model validation function for every create operation
 

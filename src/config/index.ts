@@ -17,6 +17,10 @@ const config = {
     refresh_secret: process.env.JWT_REFRESH_SECRET,
     refresh_secret_expirity: process.env.JWT_REFRESH_SECRET_EXPIRES_IN,
   },
+  redisURL: process.env.REDIS_URL,
+  redisExpireIn: process.env.REDIS_EXPIRE_IN,
+  authService: process.env.AUTH_SERVICE,
+  coreService: process.env.CORE_SERVICE,
 };
 
 export default config;

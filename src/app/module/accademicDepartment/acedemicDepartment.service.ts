@@ -3,7 +3,10 @@ import {
   IPaginatedResponse,
   IPaginationOptions,
 } from '../../../interfaces/pagination';
+import { AccademicFaculty } from '../accademicFaculty/accademicFaculty.model';
 import {
+  AcademicDepartmentCreatedEvent,
+  AcademicDepartmentUpdatedEvent,
   IAcademicDepartment,
   IAccademicDepartmentFilter,
 } from './academicDepartment.interface';
@@ -92,10 +95,47 @@ const deleteDepartment = async (
   return result;
 };
 
+const insertIntoDBFromEvent = async (data: AcademicDepartmentCreatedEvent) => {
+  const academicFaculty = await AccademicFaculty.findOne({
+    syncId: data.academicFacultyId,
+  });
+  const payload = {
+    title: data?.title,
+    academicFaculty: academicFaculty?.id,
+    syncId: data.id,
+  };
+  await AccademicDepartment.create(payload);
+};
+
+const updateOneInDBFromEvent = async (
+  e: AcademicDepartmentUpdatedEvent
+): Promise<void> => {
+  const academicFaculty = await AccademicFaculty.findOne({
+    syncId: e.academicFacultyId,
+  });
+  const payload = {
+    title: e.title,
+    academicFaculty: academicFaculty?._id,
+  };
+
+  await AccademicDepartment.findOneAndUpdate(
+    { syncId: e.id },
+    {
+      $set: payload,
+    }
+  );
+};
+
+const deleteOneFromDBFromEvent = async (syncId: string): Promise<void> => {
+  await AccademicDepartment.findOneAndDelete({ syncId });
+};
 export const AccademicDepartmentService = {
   createDepartment,
   getAllDepartments,
   getDepartmentByID,
   updateDepartment,
   deleteDepartment,
+  insertIntoDBFromEvent,
+  updateOneInDBFromEvent,
+  deleteOneFromDBFromEvent,
 };
