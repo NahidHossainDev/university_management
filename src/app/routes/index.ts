@@ -11,14 +11,14 @@ import { UserRouter } from '../module/user/user.router';
 
 const appRouter = Router();
 const routeModule = [
-  { path: '/users', route: UserRouter },
+  { path: '/user', route: UserRouter },
   { path: '/academic-semester', route: AccademicSemesterRouter },
   { path: '/academic-faculty', route: AccademicFacultyRouter },
   { path: '/academic-department', route: AccademicDepartmentRouter },
   { path: '/student', route: StudentRouter },
   { path: '/faculty', route: FacultyRoutes },
   { path: '/admin', route: AdminRoutes },
-  { path: '/management-departments', route: ManagementDepartmentRoutes },
+  { path: '/management-department', route: ManagementDepartmentRoutes },
   { path: '/auth', route: AuthRoutes },
 ];
 
